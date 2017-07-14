@@ -7,7 +7,7 @@ class StuffSelling {
 	public $modx;
 	public $config;
 
-	function xxconstruct(modX &$modx, array $config = array()) {
+	function __construct(modX &$modx, array $config = array()) {
 
 		$this->modx = &$modx;
 
@@ -42,5 +42,5 @@ class StuffSelling {
 			$config
 		);
 
-	}
+	} // __construct
 }

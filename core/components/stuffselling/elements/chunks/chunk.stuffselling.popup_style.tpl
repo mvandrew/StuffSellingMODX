@@ -1,1 +1,0 @@
-<link rel="stylesheet" type="text/css" href="[[++site_url]]assets/theme/stylesheets/popup.css">
