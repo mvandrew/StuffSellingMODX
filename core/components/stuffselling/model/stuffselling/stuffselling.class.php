@@ -9,7 +9,7 @@ class StuffSelling {
 
 	function xxconstruct(modX &$modx, array $config = array()) {
 
-		$this->modx = $modx;
+		$this->modx = &$modx;
 
 		// Base Path
 		$basePath = $this->modx->getOption(
