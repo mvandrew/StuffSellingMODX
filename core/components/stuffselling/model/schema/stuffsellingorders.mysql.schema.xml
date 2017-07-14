@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <model package="stuffselling" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM">
-    <object class="StuffSelling" table="stuffselling" extends="xPDOSimpleObject">
+    <object class="StuffSellingOrders" table="stuffsellingorders" extends="xPDOSimpleObject">
         <field key="name" dbtype="varchar" precision="50" phptype="string" null="false" default="" />
         <field key="phone" dbtype="varchar" precision="50" phptype="string" null="false" default="" />
         <field key="invent_item" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="false" default="0" />

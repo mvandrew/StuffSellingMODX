@@ -10,5 +10,5 @@ $stuffselling = $modx->getService(
 	$scriptProperties
 );
 
-if ( !($stuffselling instanceof StuffSelling) )
+if ( !($stuffselling instanceof StuffSale) )
 	return "";
