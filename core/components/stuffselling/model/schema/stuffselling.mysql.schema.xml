@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<model package="stuffselling" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM">
+    <object class="StuffSelling" table="stuffselling" extends="xPDOSimpleObject">
+        <field key="name" dbtype="varchar" precision="50" phptype="string" null="false" default="" />
+        <field key="phone" dbtype="varchar" precision="50" phptype="string" null="false" default="" />
+        <field key="invent_item" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="false" default="0" />
+        <field key="qty" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="false" default="0" />
+        <field key="price" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="false" default="0" />
+        <field key="sum_amount" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="false" default="0" />
+        <field key="ip_address" dbtype="varchar" precision="15" phptype="string" null="false" default="" />
+        <field key="cpa" dbtype="varchar" precision="20" phptype="string" null="false" default="" />
+        <field key="is_fake" dbtype="tinyint" precision="1" phptype="boolean" null="false" default="0"/>
+
+        <aggregate alias="InventItem" class="modResource" local="invent_item" foreign="id" cardinality="one" owner="foreign"/>
+    </object>
+</model>
