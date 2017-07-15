@@ -21,4 +21,9 @@
         youFrame.style.height = @.style.height
         @.parentNode.replaceChild youFrame, @
 
+
+
+  $(document).ready ->
+    window.youtubeContainer()
+
 ) jQuery

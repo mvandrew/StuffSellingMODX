@@ -4,12 +4,12 @@ class StuffSelling {
 	/**
 	 * @var modX
 	 */
-	public $modx;
-	public $config;
+	public $modx = null;
+	public $config = array();
 
 	function __construct(modX &$modx, array $config = array()) {
 
-		$this->modx = &$modx;
+		$this->modx = & $modx;
 
 		// Base Path
 		$basePath = $this->modx->getOption(
@@ -28,19 +28,46 @@ class StuffSelling {
 		// Filling Configuration Parameters
 		$this->config = array_merge(
 			array(
-				"basePath" => $basePath,
-				"corePath" => $basePath,
-				"modelPath" => $basePath . "model/",
-				"processorsPath" => $basePath . "processors/",
-				"templatesPath" => $basePath . "templatesPath/",
-				"chunksPath" => $basePath . "elements/chunks/",
-				"jsUrl" => $assetsUrl . "js/",
-				"cssUrl" => $assetsUrl . "css/",
-				"assetsUrl" => $assetsUrl,
-				"connectorUrl" => $assetsUrl . "connector.php",
+				"basePath"          => $basePath,
+				"corePath"          => $basePath,
+				"modelPath"         => $basePath . "model/",
+				"processorsPath"    => $basePath . "processors/",
+				"templatesPath"     => $basePath . "templatesPath/",
+				"chunksPath"        => $basePath . "elements/chunks/",
+				"jsUrl"             => $assetsUrl . "javascripts/",
+				"cssUrl"            => $assetsUrl . "css/",
+				"assetsUrl"         => $assetsUrl,
+				"connectorUrl"      => $assetsUrl . "connector.php",
 			),
 			$config
 		);
 
 	} // __construct
+
+
+	/**
+	 * Process client request
+	 *
+	 * @return void
+	 */
+	public function process_request() {
+
+	} // process_request
+
+
+	/**
+	 * Display on page elements
+	 *
+	 * @return void
+	 */
+	public function display_elements() {
+
+		// Adding Styles
+		$this->modx->regClientCSS( $this->config['cssUrl'] . 'popup.css' );
+
+		// Adding Scripts
+		$this->modx->regClientScript( $this->config['jsUrl'] . 'device.min.js' );
+		$this->modx->regClientScript( $this->config['jsUrl'] . 'stuffselling.min.js' );
+
+	} // display_elements
 }
