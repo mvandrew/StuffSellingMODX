@@ -16,5 +16,6 @@ $stuffselling = $modx->getService(
 if ( !($stuffselling instanceof StuffSelling) )
 	return "";
 
-$stuffselling->display_elements();
-return "<script>window.ssAssetsUrl = '" . $stuffselling->config['assetsUrl'] . "';</script>";
+
+return "<script>window.ssAssetsUrl = '" . $stuffselling->config['assetsUrl'] . "';</script>"
+       . $stuffselling->display_elements();

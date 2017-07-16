@@ -6,7 +6,7 @@
                                                     &field=`m1_product`
                                                     &processTV=`1`
                                                 ]]">
-<input type="hidden" name="ref" value="[[++m1_ref]]">
+<input type="hidden" name="ref" value="[[++stuffselling.m1_ref]]">
 <input type="hidden" name="lnk" value="[[getResourceField
                                             ?id=`[[$sellingItem]]`
                                             &field=`m1_link`

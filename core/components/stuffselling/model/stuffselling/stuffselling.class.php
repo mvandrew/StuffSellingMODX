@@ -58,7 +58,7 @@ class StuffSelling {
 	/**
 	 * Display on page elements
 	 *
-	 * @return void
+	 * @return string
 	 */
 	public function display_elements() {
 
@@ -68,6 +68,10 @@ class StuffSelling {
 		// Adding Scripts
 		$this->modx->regClientScript( $this->config['jsUrl'] . 'device.min.js' );
 		$this->modx->regClientScript( $this->config['jsUrl'] . 'stuffselling.min.js' );
+
+		$popup = $this->modx->getChunk('ssPopupSection');
+
+		return $popup;
 
 	} // display_elements
 }
