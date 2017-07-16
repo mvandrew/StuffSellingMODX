@@ -117,7 +117,8 @@
             curOperator = 1;
           }
           window.popupOperatorId = curOperator;
-          imageUrl = 'url(' + window.ssAssetsUrl + '"images/call-phone-' + window.popupOperatorId.toString() + '.png")';
+          console.log(curOperator);
+          imageUrl = 'url("' + window.ssAssetsUrl + 'images/call-phone-' + window.popupOperatorId.toString() + '.png")';
           return $(".pop_call_front").css("background-image", imageUrl);
         } else {
           return window.popupOperatorCount--;

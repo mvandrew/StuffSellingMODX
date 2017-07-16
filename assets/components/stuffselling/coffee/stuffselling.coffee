@@ -121,9 +121,10 @@
         curOperator++ if curOperator == window.popupOperatorId
         curOperator = 1 if curOperator > 6
         window.popupOperatorId = curOperator
+        console.log curOperator
 
         # Формирование ссылки на изображение оператора
-        imageUrl = 'url(' + window.ssAssetsUrl + '"images/call-phone-' + window.popupOperatorId.toString() + '.png")'
+        imageUrl = 'url("' + window.ssAssetsUrl + 'images/call-phone-' + window.popupOperatorId.toString() + '.png")'
         $(".pop_call_front").css "background-image", imageUrl
       else
         window.popupOperatorCount--
