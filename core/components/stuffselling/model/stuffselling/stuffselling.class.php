@@ -15,14 +15,14 @@ class StuffSelling {
 		$basePath = $this->modx->getOption(
 			"stuffselling.core_path",
 			$config,
-			$this->modx->getOption("core_path") . "components/stuffselling"
+			$this->modx->getOption("core_path") . "components/stuffselling/"
 		);
 
 		// Assets URL
 		$assetsUrl = $this->modx->getOption(
 			"stuffselling.assets_url",
 			$config,
-			$this->modx->getOption("assets_url") . "components/stuffselling"
+			$this->modx->getOption("assets_url") . "components/stuffselling/"
 		);
 
 		// Filling Configuration Parameters
@@ -67,6 +67,8 @@ class StuffSelling {
 
 		// Adding Scripts
 		$this->modx->regClientScript( $this->config['jsUrl'] . 'device.min.js' );
+		$this->modx->regClientScript( $this->config['jsUrl'] . 'cpa.min.js' );
+		$this->modx->regClientScript( $this->config['jsUrl'] . 'm1.min.js' );
 		$this->modx->regClientScript( $this->config['jsUrl'] . 'stuffselling.min.js' );
 
 		$popup = $this->modx->getChunk('ssPopupSection');

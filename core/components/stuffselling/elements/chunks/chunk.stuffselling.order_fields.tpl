@@ -1,3 +1,4 @@
+[[- Служебные поля для формы заказа ]]
 <input type="hidden" name="item" value="[[$sellingItem]]">
 <input type="hidden" name="qty" value="1">
 <input type="hidden" name="price" value="[[$sellingItemPrice]]">

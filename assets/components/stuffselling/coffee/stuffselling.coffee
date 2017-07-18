@@ -121,7 +121,6 @@
         curOperator++ if curOperator == window.popupOperatorId
         curOperator = 1 if curOperator > 6
         window.popupOperatorId = curOperator
-        console.log curOperator
 
         # Формирование ссылки на изображение оператора
         imageUrl = 'url("' + window.ssAssetsUrl + 'images/call-phone-' + window.popupOperatorId.toString() + '.png")'
@@ -131,10 +130,18 @@
 
 
 
+  cpaInit = () -> # Инициализация взаимодействия с CPA сетями
+    m1Enabled = $('body').attr 'data-m1-enabled'
+    window.m1_cpaInit() if m1Enabled == "1"
+
+
+
   $(document).ready ->
     window.youtubeContainer()
     window.robotTest()
     window.validateOrderForm()
+
+    cpaInit()
 
     popupItemsInit()
 
