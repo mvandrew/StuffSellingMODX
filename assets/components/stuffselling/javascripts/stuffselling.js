@@ -2,6 +2,17 @@
 (function() {
   (function($) {
     var cpaInit, popupCallbackChangeOperator, popupItemsInit, popupToggleForm;
+    window.anchorAnimate = function() {
+      return $("a[href*='#']").on("click", function(event) {
+        var hrefValue, pattern;
+        pattern = /#.*$/g;
+        hrefValue = pattern.exec($(this).attr("href"))[0];
+        $("html, body").animate({
+          scrollTop: $(hrefValue).offset().top + "px"
+        });
+        return event.preventDefault();
+      });
+    };
     window.youtubeContainer = function() {
       return $(".youtube").each(function() {
         var youControl, youThumb;
@@ -135,6 +146,7 @@
       window.youtubeContainer();
       window.robotTest();
       window.validateOrderForm();
+      window.anchorAnimate();
       cpaInit();
       return popupItemsInit();
     });

@@ -1,5 +1,12 @@
 (($) ->
 
+  window.anchorAnimate = () -> # Анимация перехода по якорям
+    $("a[href*='#']").on "click", (event) ->
+      pattern = /#.*$/g
+      hrefValue = pattern.exec($(@).attr("href"))[0]
+      $("html, body").animate { scrollTop: $(hrefValue).offset().top + "px" }
+      event.preventDefault()
+
   window.youtubeContainer = () -> # Формирование контейнера для youtube ролика
     $(".youtube").each ->
       # Подготовка превьюшки ролика
@@ -140,6 +147,7 @@
     window.youtubeContainer()
     window.robotTest()
     window.validateOrderForm()
+    window.anchorAnimate()
 
     cpaInit()
 
