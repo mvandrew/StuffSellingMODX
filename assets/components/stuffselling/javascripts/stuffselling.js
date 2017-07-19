@@ -89,7 +89,7 @@
           return eventData.preventDefault();
         });
       }
-      if (comebacker_enabled) {
+      if (comebacker_enabled && !window.device.mobile()) {
         $(window).on("mouseout", function(eventData) {
           var res;
           if ($(".pp_wrapper").css("display") === "none" && eventData.pageY - $(window).scrollTop() < 1) {
@@ -98,7 +98,7 @@
           }
         });
       }
-      if (callback_enabled) {
+      if (callback_enabled && !window.device.mobile()) {
         window.popupOperatorId = -1;
         window.popupOperatorCount = 0;
         $(".pop_call_cont").on("click", function(eventData) {

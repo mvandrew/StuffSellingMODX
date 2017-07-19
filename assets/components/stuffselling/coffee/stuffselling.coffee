@@ -96,13 +96,13 @@
         popupToggleForm()
         eventData.preventDefault()
 
-    if comebacker_enabled
+    if comebacker_enabled and not window.device.mobile()
       $(window).on "mouseout", (eventData) ->
         if $(".pp_wrapper").css("display") == "none" and eventData.pageY - $(window).scrollTop() < 1
           popupToggleForm()
           res = false
 
-    if callback_enabled
+    if callback_enabled and not window.device.mobile()
       window.popupOperatorId = -1
       window.popupOperatorCount = 0
       $(".pop_call_cont").on "click", (eventData) ->
