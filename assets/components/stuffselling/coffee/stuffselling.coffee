@@ -137,6 +137,15 @@
 
 
 
+  window.checkMobile = () -> # Проверка на предмет мобильного устройства
+    isMobileVersion = $('body').attr 'data-is-mobile'
+    mobileUrl = $('body').attr 'data-mobile-url'
+    if window.device.mobile() and isMobileVersion != '1' and mobileUrl.length > 0
+      mobURL = mobileUrl + document.location.search
+      window.location.replace mobURL
+
+
+
   cpaInit = () -> # Инициализация взаимодействия с CPA сетями
     m1Enabled = $('body').attr 'data-m1-enabled'
     window.m1_cpaInit() if m1Enabled == "1"
@@ -144,6 +153,8 @@
 
 
   $(document).ready ->
+    window.checkMobile()
+
     window.youtubeContainer()
     window.robotTest()
     window.validateOrderForm()

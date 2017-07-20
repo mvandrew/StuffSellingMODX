@@ -135,6 +135,15 @@
         }
       }
     };
+    window.checkMobile = function() {
+      var isMobileVersion, mobURL, mobileUrl;
+      isMobileVersion = $('body').attr('data-is-mobile');
+      mobileUrl = $('body').attr('data-mobile-url');
+      if (window.device.mobile() && isMobileVersion !== '1' && mobileUrl.length > 0) {
+        mobURL = mobileUrl + document.location.search;
+        return window.location.replace(mobURL);
+      }
+    };
     cpaInit = function() {
       var m1Enabled;
       m1Enabled = $('body').attr('data-m1-enabled');
@@ -143,6 +152,7 @@
       }
     };
     return $(document).ready(function() {
+      window.checkMobile();
       window.youtubeContainer();
       window.robotTest();
       window.validateOrderForm();
