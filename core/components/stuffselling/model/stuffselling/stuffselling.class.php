@@ -32,7 +32,7 @@ class StuffSelling {
 				"corePath"          => $basePath,
 				"modelPath"         => $basePath . "model/",
 				"processorsPath"    => $basePath . "processors/",
-				"templatesPath"     => $basePath . "templatesPath/",
+				"templatesPath"     => $basePath . "templates/",
 				"chunksPath"        => $basePath . "elements/chunks/",
 				"jsUrl"             => $assetsUrl . "javascripts/",
 				"cssUrl"            => $assetsUrl . "css/",
